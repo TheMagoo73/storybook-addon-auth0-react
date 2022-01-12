@@ -10,7 +10,13 @@ export const RequestDataButton = styled(Button)({
 
 export const PanelContent: React.FC = () => {
   const value = useParameter(PARAM_KEY, {
-    isLoading: false
+    isLoading: false,
+    isAuthenticated: false
   })
-  return <div>IsLoading? {value.isLoading ? 'true' : 'false'}</div>
+  return( 
+    <>
+      <div>IsLoading: {value.isLoading ? 'true' : 'false'}</div>
+      <div>IsAuthenticated: {value.isAuthenticated ? 'true' : 'false'}</div>
+    </>
+  )
 };
