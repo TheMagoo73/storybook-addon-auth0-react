@@ -40,6 +40,7 @@
     "eject-ts": "zx scripts/eject-typescript.mjs"
   },
   "devDependencies": {
+    "@auth0/auth0-react": "^1.8.0",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
@@ -61,6 +62,7 @@
     "zx": "^1.14.1"
   },
   "peerDependencies": {
+    "@auth0/auth0-react": "^1.8.0",
     "@storybook/addons": "^6.4.0",
     "@storybook/api": "^6.4.0",
     "@storybook/components": "^6.4.0",
@@ -74,6 +76,9 @@
       "optional": true
     },
     "react-dom": {
+      "optional": true
+    },
+    "@auth0/auth0-react": {
       "optional": true
     }
   },

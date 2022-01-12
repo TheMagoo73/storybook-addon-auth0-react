@@ -11,8 +11,8 @@ interface PanelProps {
 export const Panel: React.FC<PanelProps> = (props) => {
   // https://storybook.js.org/docs/react/addons/addons-api#useaddonstate
   const [results, setState] = useAddonState(ADDON_ID, {
-    danger: [],
-    warning: [],
+    isLoading: false,
+    isAuthenticated: false,
   });
 
   // https://storybook.js.org/docs/react/addons/addons-api#usechannel

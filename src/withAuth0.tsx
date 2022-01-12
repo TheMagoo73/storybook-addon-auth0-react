@@ -1,21 +1,21 @@
 import { StoryFn as StoryFunction, StoryContext } from "@storybook/addons";
-import { useEffect, useGlobals } from "@storybook/addons";
+import { useEffect, useGlobals, useState, useParameter } from "@storybook/addons";
 import React from "react";
+import { PARAM_KEY, defaultAuth0State } from "./constants";
+import { Auth0Context } from '@auth0/auth0-react'
 
 export const withAuth0 = (
   Story: React.FC<unknown>,
   context: StoryContext) => {
 
-  // TODO: 'div' should be an Auth0Provider component, from the Auth0-react library, initialised
-  // using the configuration from the story/UI
-  const divStyles =  {
-    border: '5px solid red'
-  }
-  
+  const initalAuth0State = useParameter(PARAM_KEY, {...defaultAuth0State})
+
+  const [auth0State, setAuth0State] = useState(initalAuth0State)
+
   return (
-    <div style={divStyles}>
-     <Story />
-    </div>
+    <Auth0Context.Provider value={auth0State}>
+      <Story />
+    </Auth0Context.Provider>
   )
 };
 

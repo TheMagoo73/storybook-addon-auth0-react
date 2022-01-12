@@ -20,6 +20,11 @@ Primary.args = {
   primary: true,
   label: "Button",
 };
+Primary.parameters = {
+  "auth0AddOn": {
+    isLoading: true
+  }
+}
 
 export const Secondary = Template.bind({});
 Secondary.args = {
