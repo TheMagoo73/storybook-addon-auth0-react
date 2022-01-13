@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-auth0-react",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Auth0-React library support for Storybook",
   "keywords": [
     "storybook-addons",
