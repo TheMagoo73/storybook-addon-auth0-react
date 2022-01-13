@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./button.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 /**
  * Primary UI component for user interaction
@@ -9,6 +10,9 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const mode = primary
     ? "storybook-button--primary"
     : "storybook-button--secondary";
+
+  const { isAuthenticated } = useAuth0()
+
   return (
     <button
       type="button"
@@ -18,7 +22,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
-      {label}
+      {isAuthenticated ? 'Hello Fred' : 'Who are you?'}
     </button>
   );
 };
