@@ -22,7 +22,8 @@ Primary.args = {
 };
 Primary.parameters = {
   "auth0AddOn": {
-    isLoading: true
+    isLoading: true,
+    isAuthenticated: true
   }
 }
 
